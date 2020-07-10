@@ -10,7 +10,7 @@ app.get("/", function(req, res){
 app.get("/campgrounds", function(req, res){
     var campgrounds = [
         {name: "Salmon Creek", image: "https://www.nps.gov/lavo/planyourvisit/images/southwest-campground_6081614_2.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
-        {name: "Greek see", image: "https://www.nps.gov/lavo/planyourvisit/images/southwest-campground_6081614_2.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
+        {name: "Greek scret", image: "https://www.nps.gov/lavo/planyourvisit/images/southwest-campground_6081614_2.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
         {name: "Mountain Goat's Rest", image: "https://www.nps.gov/lavo/planyourvisit/images/southwest-campground_6081614_2.jpg?maxwidth=1200&maxheight=1200&autorotate=false"},
     ]
     res.render("campgrounds", {campgrounds:campgrounds});

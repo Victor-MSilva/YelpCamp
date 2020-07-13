@@ -1,13 +1,49 @@
 <%- include("partials/header")%> 
-<h1>This is the campgrounds Page</h1>
 
-<a href="/campgrounds/new">Add new campgrounds</a>
-
-<% campgrounds.forEach(function(campground)  { %>
-    <div>
-        <h4> <%= campground.name %> </h4>
-        <img src="<%= campground.image %>">
+<div class="container">
+    <header class="jumbotron">
+    <div class="container">
+    <h1>Welcome to YelpCamp</h1> 
+    <p>View our hand-picked campgrounds from all over the world</p>
+    <p><a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campgrounds</a></p>
     </div>
-    
-<% }); %>
+    </header>
+
+    <div class="row">
+            <div class="col-lg-12">
+                <h3>Our Most Popular Campgrounds</h3>
+            </div>
+        <% campgrounds.forEach(function(campground)  { %>
+            <div class="col-sm-6 col-md-3 my-2">
+                <div class="card">
+                  <img src="<%= campground.image %>" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title text-center"><%= campground.name %></h5>
+                  </div>
+                </div>
+              </div>
+           
+           
+           
+           
+            <!-- <div class="img-thumbnail col-sm-6 col-md-4 m-2">
+                <img src="<%= campground.image %>" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%= campground.name %></h5>
+                </div>
+            </div> -->
+
+
+            <!-- <div class="col-sm-6 col-md-4">
+                <div class="img-thumbnail">
+                    <img style="width: 100%; height: 100%;" src="<%= campground.image %>">
+                    <div class="caption">
+                        <h4><%= campground.name %> </h4>
+                    </div>
+                </div>
+            </div> -->
+            
+        <% }); %>
+    </div>
+</div>
 <%- include("partials/footer")%> 

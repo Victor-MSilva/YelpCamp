@@ -1,5 +1,5 @@
 # YelpCamp
-Restaurant website where people can rate the restaurants.
+Camp website where people can rate them.
 
 * Add Landing page
 *Add Campgrounds Page that lists all campgrounds.

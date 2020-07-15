@@ -1,9 +1,5 @@
 # YelpCamp
-Restaurant website where people can rate the restaurants.
 
-* Add Landing page
-*Add Campgrounds Page that lists all campgrounds.
+YelpCamp is a website made during the course "The Web Developer Bootcamp" on Udemy. It's a website that people can add, comment and rate campgrounds all over the world. 
 
-Each Campground has:
-* Name
-* Image
+In this project I used a lot of technologies, like CSS, HTML, JavaScript, Node.js, etc. This is a learning project. 

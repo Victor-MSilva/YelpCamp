@@ -20,15 +20,39 @@
                     <p>
                         <em>Submitted By </em><%= campground.author.username %>
                     </p>
+                    <div class="inline">
+                        <% if(currentUser && campground.author.id.equals(currentUser._id)){ %> 
+                        <a href="/campgrounds/<%= campground._id %>/edit" tabindex="0">
+                            <button class="small ui basic orange animated button" tabindex="0">
+                                <div class="ui visible content">Edit</div>
+                                    <div class="hidden content">
+                                    <i class="edit icon"></i>
+                                    </div>
+                            </button>
+                        </a>
+                        <form class="inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                            <button class="small ui basic red animated button" tabindex="0">
+                                <div class="ui visible content">Delete</div>
+                                    <div class="hidden content">
+                                    <i class="trash alternate icon"></i>
+                                    </div>
+                            </button>
+                        </form>
+                        <div class="float-right inline">
+                            <a class="btn btn-outline-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                        </div> 
+                        <% } else{ %> 
+                        <div class="inline">
+                            <a class="btn btn-outline-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                        </div>
+                        <% } %>        
+                    </div>
                 </div>
             </div>
-            <div class="card my-3">
-                <div class="card-header text-right">
-                    <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-                </div>
-                <div class="card-body" style="background-color:rgb(248, 248, 248);">
+            <div class="card" style="width: 100%;">
+                <div class="card-body pt-0" style="background-color:rgb(248, 248, 248);">
                     <% campground.comments.forEach(function(comment){ %> 
-                        <div class="row">
+                        <div class="row card-header" style="background-color:rgb(248, 248, 248);">
                             <div class="col-md-12">
                                 <p>
                                     <strong><%= comment.author.username %></strong> 
@@ -39,6 +63,24 @@
                                 <p>
                                     <%= comment.text %>
                                 </p>
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %> 
+                                <a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" tabindex="0">
+                                    <button class="mini ui basic orange animated button" tabindex="0">
+                                        <div class="ui visible content">Edit</div>
+                                            <div class="hidden content">
+                                            <i class="edit icon"></i>
+                                            </div>
+                                    </button>
+                                </a>
+                                <form class="inline" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                    <button class="mini ui basic red animated button" tabindex="0">
+                                        <div class="ui visible content">Delete</div>
+                                            <div class="hidden content">
+                                            <i class="trash alternate icon"></i>
+                                            </div>
+                                    </button>
+                                </form>
+                                <% } %> 
                             </div>
                         </div>
                     <% }); %>
